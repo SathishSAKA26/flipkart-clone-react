@@ -100,6 +100,20 @@ p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-5);
 }
+
+/* input */
+.login-input {
+  border: none;
+  outline: none;
+  width: 95%;
+  border-bottom: 1px solid grey;
+  padding: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 10px;
+  background: transparent;
+}
+
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 4rem;

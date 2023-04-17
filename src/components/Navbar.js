@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import the logo image
-import Logo from "../assets/images/large.png";
+import Logo from "../assets/images/large (2).png";
 import { Link } from "react-router-dom";
 // search icon
 import { FcSearch } from "react-icons/fc";
@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="flex h-12 bg-red-500 fixed z-2 w-full font-bold">
         <div>
           <div className="flex justify-around items-center mx-32 ml-7 max-w-7xl w-full gap-6">
-            <Link to={"/"} className="w-[20%]">
+            <Link to={"/"} className="w-[20%] pb-3">
               <img src={Logo} alt="Logo" />
             </Link>
             <div className="flex justify-between items-center max-w-md w-full mb-1">
