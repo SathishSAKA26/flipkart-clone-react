@@ -18,7 +18,7 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
             <p className="text-lg font-light text-white">
               Get access to your orders, Wishlist and Recommendations
             </p>
-            <div className="pt-20">
+            <div className="pt-16">
               <img src={LoginLogo} alt="loginlogo" />
             </div>
           </div>
