@@ -2,12 +2,30 @@ import React, { useState } from "react";
 // import icons
 import { GiCrossMark } from "react-icons/gi";
 import LoginLogo from "../assets/images/login.svg";
+// import supabase
+import supabase from "../supabase";
 
 const LoginModal = ({ isOpen, setIsOpen }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const [loginType, setLoginType] = useState(true);
+
+  const signup = async () => {
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+    });
+    console.log(data, error);
+  };
+
+  const login = async () => {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+    console.log(data, error);
+  };
 
   return isOpen ? (
     <div className="fixed top-0 left-0 bg-slate-50 bg-opacity-40 w-full h-[100vh] z-[1000] pt-14">
@@ -46,11 +64,17 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
             <span style={{ color: "blue" }}>Privacy Policy</span>.
           </p>
           {loginType ? (
-            <button className="w-full mt-[10px] border-none outline-none text-white bg-orange-600 text-base h-12 cursor-pointer ">
+            <button
+              className="w-full mt-[10px] border-none outline-none text-white bg-orange-600 text-base h-12 cursor-pointer "
+              onClick={login}
+            >
               Login
             </button>
           ) : (
-            <button className="w-full mt-[10px] border-none outline-none text-white bg-orange-600 text-base h-12 cursor-pointer ">
+            <button
+              className="w-full mt-[10px] border-none outline-none text-white bg-orange-600 text-base h-12 cursor-pointer "
+              onClick={signup}
+            >
               Signup
             </button>
           )}
