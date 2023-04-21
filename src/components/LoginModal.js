@@ -16,7 +16,9 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
       email,
       password,
     });
-    console.log(data, error);
+    if (data.user) {
+      alert("Account created. Please verify your Gmail");
+    }
   };
 
   const login = async () => {
@@ -24,7 +26,10 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
       email,
       password,
     });
-    console.log(data, error);
+    if (error) {
+      alert(error?.message);
+      return;
+    }
   };
 
   return isOpen ? (
