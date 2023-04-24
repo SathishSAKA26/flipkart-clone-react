@@ -4,6 +4,9 @@ import { GiCrossMark } from "react-icons/gi";
 import LoginLogo from "../assets/images/login.svg";
 // import supabase
 import supabase from "../supabase";
+// import  dispatch
+import { useDispatch } from "react-redux";
+import { setUser } from "../slices/userSlices";
 
 const LoginModal = ({ isOpen, setIsOpen }) => {
   const [email, setEmail] = useState("");
@@ -11,6 +14,7 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
 
   const [loginType, setLoginType] = useState(true);
 
+  // signup function
   const signup = async () => {
     const { data, error } = await supabase.auth.signUp({
       email,
@@ -21,6 +25,7 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
     }
   };
 
+  //login function
   const login = async () => {
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
@@ -30,6 +35,7 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
       alert(error?.message);
       return;
     }
+    dispatch(setUser(data.user));
   };
 
   return isOpen ? (
