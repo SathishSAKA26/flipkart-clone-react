@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import all pages
 import Home from "./Pages/Home";
 import Products from "./Pages/Products";
@@ -8,8 +8,23 @@ import Cart from "./Pages/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import navbar component
 import Navbar from "./components/Navbar";
+import { useDispatch } from "react-redux";
+import supabase from "./supabase";
+// import slice
+import { setUser } from "./slices/userSlices";
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  const getUser = async () => {
+    const { data, error } = await supabase.auth.getSession();
+    dispatch(setUser(data.session.user));
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
+
   return (
     <BrowserRouter>
       <Navbar />
