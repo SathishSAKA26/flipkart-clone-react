@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import the logo image
 import Logo from "../assets/images/large (2).png";
 import { Link } from "react-router-dom";
@@ -7,9 +7,29 @@ import { FcSearch } from "react-icons/fc";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { RiShoppingCartFill } from "react-icons/ri";
 import LoginModal from "./LoginModal";
+import { useDispatch, useSelector } from "react-redux";
+import supabase from "../supabase";
+import { removeUser } from "../slices/userSlices";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const user = useSelector((state) => state.userData.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (user) {
+      setIsOpen(false);
+    }
+  }, [user]);
+
+  const signOut = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (!error) {
+      dispatch(removeUser());
+    }
+  };
+
   return (
     <>
       <div className="flex h-12 bg-red-500 fixed z-2 w-full font-bold">
@@ -28,9 +48,15 @@ const Navbar = () => {
                 <FcSearch />
               </button>
             </div>
-            <button className="text-white" onClick={() => setIsOpen(true)}>
-              Login
-            </button>
+            {user ? (
+              <h3 className=" text-xl pt-3" onClick={signOut}>
+                @{user?.email.slice(0, 10)}
+              </h3>
+            ) : (
+              <button className="text-white" onClick={() => setIsOpen(true)}>
+                Login
+              </button>
+            )}
             <div className="pt-3 text-white">
               <h3 className="text-lg">Become a Seller</h3>
             </div>

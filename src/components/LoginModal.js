@@ -14,6 +14,8 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
 
   const [loginType, setLoginType] = useState(true);
 
+  const dispatch = useDispatch();
+
   // signup function
   const signup = async () => {
     const { data, error } = await supabase.auth.signUp({
