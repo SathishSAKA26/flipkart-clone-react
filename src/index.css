@@ -138,3 +138,11 @@ p {
   }
 }
 /*  global classes */
+/* .category-img > img {
+  width: 100%;
+} */
+
+.categoryCarousel-left {
+  background-image: url(https://rukminim1.flixcart.com/fk-p-flap/278/278/image/7593e7b6640822c1.jpg?q=90);
+  background-repeat: no-repeat;
+}
