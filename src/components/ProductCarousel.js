@@ -3,6 +3,10 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
+import CategoryBanner from "./CategoryBanner";
+
+const
 
 const ProductCarousel = ({ BgIm, Title, Data }) => {
   const settings = {
@@ -22,7 +26,17 @@ const ProductCarousel = ({ BgIm, Title, Data }) => {
         <button className="categoryCarousel-btn">View All</button>
       </div>
       <div className="categoryCarousel-right">
-        <Slider {...settings}></Slider>
+        <Slider {...settings}>
+          {Data.map((item, index) => (
+            <Link key={index} to={"/Products"}>
+              <CategoryBanner
+                ImgSrc={item.ImgSrc}
+                Title={item.Title}
+                Brand={item.Brand}
+              />
+            </Link>
+          ))}
+        </Slider>
       </div>
     </div>
   );
