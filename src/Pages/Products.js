@@ -1,5 +1,6 @@
 import React from "react";
 // import product data
+import { productsData } from "../../productsData";
 
 const Products = () => {
   return (
@@ -23,9 +24,7 @@ const Products = () => {
         </div>
       </div>
       <div className="">
-        <div className="products-item">
-
-        </div>
+        <div className="products-item"></div>
       </div>
     </div>
   );
