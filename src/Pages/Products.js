@@ -1,4 +1,5 @@
 import React from "react";
+// import product data
 
 const Products = () => {
   return (
@@ -19,6 +20,11 @@ const Products = () => {
         </div>
         <div className="brand">
           <p>Brand</p>
+        </div>
+      </div>
+      <div className="">
+        <div className="products-item">
+
         </div>
       </div>
     </div>
