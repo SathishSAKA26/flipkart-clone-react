@@ -40,12 +40,12 @@ const ProductCarousel = ({ BgIm, Title, Data }) => {
   };
 
   return (
-    <div className="categoryCarousel">
+    <div className="w-full h-[366px] mt-[10px] flex shadow-md">
       <div
-        className="categoryCarousel-left"
+        className="w-[18%] text-center pt-[10%] px-[10px] pb-[10px] "
         // style={{ background: `url(${BgIm}) no-repeat 0px bottom` }}
       >
-        <p className="categoryCarousel-title">{Title}</p>
+        <p className="">{Title}</p>
         <button className="categoryCarousel-btn">View All</button>
       </div>
       <div className="categoryCarousel-right">
