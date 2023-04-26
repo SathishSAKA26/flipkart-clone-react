@@ -1,4 +1,4 @@
-const productsData = [
+export const productsData = [
   {
     id: 1,
     Product: "APPLE iPhone 11 (Black, 64 GB)",
