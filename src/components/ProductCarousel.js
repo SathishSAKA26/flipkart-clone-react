@@ -45,10 +45,15 @@ const ProductCarousel = ({ BgIm, Title, Data }) => {
         className="w-[18%] text-center pt-[10%] px-[10px] pb-[10px] "
         // style={{ background: `url(${BgIm}) no-repeat 0px bottom` }}
       >
-        <p className="">{Title}</p>
-        <button className="categoryCarousel-btn">View All</button>
+        <p className="text-2xl font-medium pb-[18px] text-center">{Title}</p>
+        <button className="bg-blue-800 outline-none py-2 px-5 text-white font-medium rounded-sm border-2 border-solid border-blue-700">
+          View All
+        </button>
       </div>
-      <div className="categoryCarousel-right">
+      <div
+        className="bg-gray-900 h-[366px] relative"
+        style={{ width: "calc(100% - 17%)" }}
+      >
         <Slider nextArrow={<Next />} prevArrow={<Prev />} {...settings}>
           {Data.map((item, index) => (
             <Link key={index} to={"/Products"}>

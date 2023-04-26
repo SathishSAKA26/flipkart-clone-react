@@ -7,9 +7,9 @@ import ProductCarousel from "../components/ProductCarousel";
 
 const Home = () => {
   return (
-    <div className="home">
-      <div className="home-categoryContainer">
-        <div className="home-categoryBar">
+    <div className="w-full bg-gray-900 py-[50px] px-0 overflow-hidden">
+      <div className="w-full shadow-lg">
+        <div className="w-[1200px] my-0 mx-auto text-center flex justify-evenly items-center py-[20px] px-0">
           {CategoryBarData.map((item, index) => (
             <CategoryBar
               key={index}
@@ -19,7 +19,7 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div className="home-container">
+      <div className="py-0 px-8">
         <div className="home-carousel">
           <BannerCarousel data={CarouselData} />
         </div>
