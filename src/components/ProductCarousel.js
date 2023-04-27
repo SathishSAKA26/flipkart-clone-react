@@ -51,7 +51,7 @@ const ProductCarousel = ({ BgIm, Title, Data }) => {
         </button>
       </div>
       <div
-        className="bg-gray-900 h-[366px] relative"
+        className="bg-gray-900 h-[366px] "
         style={{ width: "calc(100% - 17%)" }}
       >
         <Slider nextArrow={<Next />} prevArrow={<Prev />} {...settings}>

@@ -96,10 +96,10 @@ h3 {
 h4 {
   font-size: 0.875rem;
 }
-p {
+/* p {
   margin-bottom: 1.25rem;
   color: var(--clr-grey-5);
-}
+} */
 
 /* input */
 .login-input {
@@ -151,4 +151,13 @@ p {
   width: 200px;
   height: 100%;
   object-fit: contain;
+}
+
+.price-input > p {
+  font-size: 15px;
+  color: var(--clr-grey-2);
+}
+
+.proimg:hover {
+  border: 1px solid rgb(66, 127, 240);
 }

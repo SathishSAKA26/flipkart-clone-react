@@ -42,7 +42,7 @@ const LoginModal = ({ isOpen, setIsOpen }) => {
 
   return isOpen ? (
     <div className="fixed top-0 left-0 bg-slate-50 bg-opacity-40 w-full h-[100vh] z-[1000] pt-14">
-      <div className="relative top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[700px] bg-slate-300 z-[10000] flex ">
+      <div className="relative  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[700px] bg-slate-300 z-[10000] flex ">
         <div className="w-2/5 h-full bg-red-500  p-[30px]">
           <div className="h-full">
             <p className="text-3xl py-3 px-0 text-white">Login</p>
