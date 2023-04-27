@@ -7,7 +7,7 @@ export const productsData = [
     Descripition: "64 GB ROM",
     Display: "15.49 cm (6.1 inch) Liquid Retina HD Display",
     Camera: "12MP + 12MP | 12MP Front Camera",
-    Battery: "  ",
+    Battery: " A13 Bionic Chip Processor ",
     Proccessor: "Brand Warranty of 1 Year",
     url: "https://rukminim1.flixcart.com/image/312/312/k2jbyq80pkrrdj/mobile-refurbished/x/j/s/iphone-11-128-d-mwm02hn-a-apple-0-original-imafkg242ugz8hwc.jpeg?q=70",
     rating: 4.5,

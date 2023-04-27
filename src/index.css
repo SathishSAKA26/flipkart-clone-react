@@ -161,3 +161,7 @@ h4 {
 .proimg:hover {
   border: 1px solid rgb(66, 127, 240);
 }
+
+.product-name {
+  letter-spacing: 1px;
+}
