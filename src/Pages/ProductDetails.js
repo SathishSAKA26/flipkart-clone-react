@@ -3,9 +3,13 @@ import { useParams } from "react-router-dom";
 import { productsData } from "../productsData";
 import { FaShoppingCart } from "react-icons/fa";
 import { AiFillThunderbolt, AiFillStar } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { addCart } from "../slices/cartSlice";
 
 const ProductDetails = () => {
   const [data, setData] = useState({});
+
+  const dispatch = useDispatch();
 
   const { id } = useParams();
 
@@ -16,8 +20,13 @@ const ProductDetails = () => {
     setData(product);
   }, [id]);
 
+  // Add to cart items
+  const addToCart = () => {
+    dispatch(addCart(data));
+  };
+
   return (
-    <div className="pt-16 pr-[10px] pb-[10px] pl-5 w-full max-h-[100vh] h-full bg-gray-950 flex text-white">
+    <div className="pt-16 pr-[10px] pb-[10px] pl-5 w-full max-h-[100vh] h-full flex text-white">
       <div className="w-[40%] flex ">
         <div className="flex flex-col">
           <img
@@ -49,7 +58,10 @@ const ProductDetails = () => {
         <div className="w-[90%]  flex items-center flex-col">
           <img src={data.url} className="w-[195px] h-[416px] object-contain" />
           <div className="w-full flex">
-            <button className="w-[200px] py-[18px] text-base my-4 mx-1 flex items-center pl-12 outline-none text-white uppercase font-semibold rounded-sm cursor-pointer bg-orange-500">
+            <button
+              className="w-[200px] py-[18px] text-base my-4 mx-1 flex items-center pl-12 outline-none text-white uppercase font-semibold rounded-sm cursor-pointer bg-orange-500"
+              onClick={addToCart}
+            >
               <FaShoppingCart /> Add to Cart
             </button>
             <button className="w-[200px] py-[18px] text-base my-4 mx-1 flex items-center pl-12 outline-none text-white uppercase font-semibold rounded-sm cursor-pointer bg-orange-700">
@@ -112,7 +124,7 @@ const ProductDetails = () => {
           <b> EMI starting </b> from ₹832/monthView Plans
         </div>
         {/* add descriptions */}
-        <div className="py-5 px-0">
+        <div className="pt-5 px-0">
           <div className="flex">
             <p className="font-bold">Color</p>
             <div className="w-[50%] flex justify-between py-0 px-[80px]">
@@ -133,7 +145,7 @@ const ProductDetails = () => {
               />
             </div>
           </div>
-          <div className="flex py-5 px-0">
+          <div className="flex pt-5 px-0">
             <p className="highlight-title font-bold">Highlights</p>
             <ul className="py-0 px-[50px]">
               <li className="pt-0 pl-0 pb-2 pr-[16px] text-md font-light">
@@ -155,7 +167,7 @@ const ProductDetails = () => {
           </div>
         </div>
         {/* Rating */}
-        <div className="RatingsAndReviews">
+        <div className="RatingsAndReviews pt-2">
           <p className="text-2xl">Ratings & Reviews</p>
           <div className="flex py-5 px-0">
             <div className="text-center w-[150px] pt-0 pr-[40px] pb-[10px] pl-0 mt-4">
@@ -166,38 +178,53 @@ const ProductDetails = () => {
                 {data.rating} Ratings & {data.reviews} Reviews
               </p>
             </div>
-            <div className="RatingsAndReviews-charts">
-              <li className="flex ">
-                <p className="star flex">5</p>
-                <div className="bar">
-                  <div className="innerbar" style={{ width: "80%" }}></div>
+            <ul className="RatingsAndReviews-charts">
+              <li className="flex items-center py-[5px] px-0">
+                <p className="py-0 px-5">5</p>
+                <div className="w-[300px] h-[5px] bg-white rounded">
+                  <div
+                    className="bg-green-700 h-full rounded-tr-sm rounded-br-sm"
+                    style={{ width: "80%" }}
+                  ></div>
                 </div>
               </li>
-              <li>
-                <p className="star">4</p>
-                <div className="bar">
-                  <div className="innerbar" style={{ width: "50%" }}></div>
+              <li className="flex items-center py-[5px] px-0">
+                <p className="py-0 px-5">4</p>
+                <div className="w-[300px] h-[5px] bg-white rounded">
+                  <div
+                    className="bg-green-700 h-full rounded-tr-lg rounded-br-lg"
+                    style={{ width: "50%" }}
+                  ></div>
                 </div>
               </li>
-              <li>
-                <p className="star">3</p>
-                <div className="bar">
-                  <div className="innerbar" style={{ width: "33.6%" }}></div>
+              <li className="flex items-center py-[5px] px-0">
+                <p className="py-0 px-5">3</p>
+                <div className="w-[300px] h-[5px] bg-white rounded">
+                  <div
+                    className="bg-green-700 h-full rounded-tr-lg rounded-br-lg"
+                    style={{ width: "33.6%" }}
+                  ></div>
                 </div>
               </li>
-              <li>
-                <p className="star">2</p>
-                <div className="bar">
-                  <div className="innerbar" style={{ width: "29.6%" }}></div>
+              <li className="flex items-center py-[5px] px-0">
+                <p className="py-0 px-5">2</p>
+                <div className="w-[300px] h-[5px] bg-white rounded">
+                  <div
+                    className="bg-green-700 h-full rounded-tr-lg rounded-br-lg"
+                    style={{ width: "29.6%" }}
+                  ></div>
                 </div>
               </li>
-              <li>
-                <p className="star">1</p>
-                <div className="bar">
-                  <div className="innerbar" style={{ width: "10%" }}></div>
+              <li className="flex items-center py-[5px] px-0">
+                <p className="py-0 px-5">1</p>
+                <div className="w-[300px] h-[5px] bg-white rounded">
+                  <div
+                    className="bg-green-700 h-full rounded-tr-lg rounded-br-lg"
+                    style={{ width: "10%" }}
+                  ></div>
                 </div>
               </li>
-            </div>
+            </ul>
           </div>
         </div>
       </div>

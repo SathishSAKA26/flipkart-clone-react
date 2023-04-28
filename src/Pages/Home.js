@@ -7,7 +7,7 @@ import ProductCarousel from "../components/ProductCarousel";
 
 const Home = () => {
   return (
-    <div className="w-full bg-gray-900 py-[50px] px-0 overflow-hidden">
+    <div className="w-full bg-gray-900 py-[50px] px-0 overflow-hidden text-white">
       <div className="w-full shadow-lg">
         <div className="w-[1200px] my-0 mx-auto text-center flex justify-evenly items-center py-[20px] px-0">
           {CategoryBarData.map((item, index) => (
