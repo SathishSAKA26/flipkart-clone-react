@@ -136,19 +136,19 @@ const ProductDetails = () => {
           <div className="flex py-5 px-0">
             <p className="highlight-title font-bold">Highlights</p>
             <ul className="py-0 px-[50px]">
-              <li className="pt-0 pl-0 pb-2 pr-[16px] text-md fond-light">
+              <li className="pt-0 pl-0 pb-2 pr-[16px] text-md font-light">
                 {data.Descripition}
               </li>
-              <li className="pt-0 pl-0 pb-2 pr-[16px] text-md fond-light">
+              <li className="pt-0 pl-0 pb-2 pr-[16px] text-md font-light">
                 {data.Display}
               </li>
-              <li className="pt-0 pl-0 pb-2 pr-[16px] text-md fond-light">
+              <li className="pt-0 pl-0 pb-2 pr-[16px] text-md font-light">
                 {data.Camera}
               </li>
-              <li className="pt-0 pl-0 pb-2 pr-[16px] text-md fond-light">
+              <li className="pt-0 pl-0 pb-2 pr-[16px] text-md font-light">
                 {data.Battery}
               </li>
-              <li className="pt-0 pl-0 pb-2 pr-[16px] text-md fond-light">
+              <li className="pt-0 pl-0 pb-2 pr-[16px] text-md font-light">
                 {data.Proccessor}
               </li>
             </ul>
@@ -157,18 +157,18 @@ const ProductDetails = () => {
         {/* Rating */}
         <div className="RatingsAndReviews">
           <p className="text-2xl">Ratings & Reviews</p>
-          <div className="RatingsAndReviews-container">
-            <div className="RatingsAndReviews-stars">
-              <p className="RatingsAndReviews-reviews">
+          <div className="flex py-5 px-0">
+            <div className="text-center w-[150px] pt-0 pr-[40px] pb-[10px] pl-0 mt-4">
+              <p className="flex items-center ml-6 text-2xl">
                 {data.rating} <AiFillStar />
               </p>
-              <p className="RatingsAndReviews-ratings">
+              <p className="text-sm font-light py-[5px] px-0">
                 {data.rating} Ratings & {data.reviews} Reviews
               </p>
             </div>
             <div className="RatingsAndReviews-charts">
-              <li>
-                <p className="star">5</p>
+              <li className="flex ">
+                <p className="star flex">5</p>
                 <div className="bar">
                   <div className="innerbar" style={{ width: "80%" }}></div>
                 </div>
